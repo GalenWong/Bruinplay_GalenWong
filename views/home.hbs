@@ -1,9 +1,142 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">var songlist=[{{#each songs}}['{{this.title}}','{{this.artistName}}','{{this.audioSrc}}'],{{/each}}];</script>
+	<script type="text/javascript" src="/js/script.js"></script>
+
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">       
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />   
+    <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          
+
 	<title>{{title}}</title>
+	<!-- font importing from google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+
 </head>
 <body>
-	{{content}}
+	
+	<div class="uploadpage">
+		<div class="uploadbox">
+			<p id="fline">Upload from local source </p>
+			
+			<p>(Or from YOUTUBE!)</p>
+			<form id="uploadSongs" method="POST" action="/upload" enctype="multipart/form-data">
+				<input type="text" id = "titleinput" name="giventitle" placeholder="Title...">
+				<input type="text" id = "artistinput" name="givenartist" placeholder="Artist...">
+				<input type="text" id = "albuminput" name="givenalbum" placeholder="Album Name...(Optional)">
+				<input type="text" id ="urlinput" name="givenurl" placeholder="Link from Youtube">
+				<div class="sourceinput">
+					<h4>or ... Upload Audio File:</h4>
+					<input type="file" id="sourceinput" name="givensource">
+				</div>
+
+				<div class="coverinput">
+					<h4>Upload Album Cover(Optional):</h4>
+					<input type="file" id="coverinput" name="givencover">
+				</div>
+				<div class="submit">
+					<input type="submit" id="submitbutton" value="Upload and Behold?">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="historylist" class="sidenav">
+		<h2>History</h2>
+		<ul id='dropdown1'>
+ 		</ul>
+	</div>
+
+	<div class="headerdiv">
+		<div class="list">
+		  <a href="/" class="BP">BruinPlay</a>
+		  <a href="/" id="home"  style="text-shadow: 0 0 10px white;color: #6bd4ff;" >Home</a>
+		  <a href="/album" id="byalbum">Albums</a>
+		  <a href="/artist" id="byartist">Artists</a>
+		  <input type="text" class="searchbar" name="search" placeholder="Search..">
+
+
+        
+		  <h2 class="Add">Add to Library</h2>
+		  <a id="history" class='dropdown-button btn' href='#' onclick="openNav()">Hisotry</a>
+		</div>
+	</div>
+
+	<div class="content">
+	<div class="boxes" tabindex="1">
+		<div class="center">
+			{{#each songs}}
+				<div class="box">
+					<div class="border">
+						<div class="albumcover">
+							<div class="image">
+								{{#if this.audioImageSrc}}
+								<img src={{this.audioImageSrc}} height="200px" width="200px">
+								{{else if this.albumCoverSrc}}
+								<img src={{this.albumCoverSrc}} height="200px" width="200px">
+								{{else}}
+								<img src="resource/no-cover.png" height="200px" width="200px">
+								{{/if}}
+							</div>
+
+							<div class="play" onclick="setnewplay('{{this.title}}','{{this.artistName}}','{{this.audioSrc}}')">
+								<img src="resource/play.png" height="100px" width="100px">
+							</div>
+						</div>
+						<div class="info">
+							<div class="infoContent">
+							<div class="songName">
+								<p>{{this.title}}</p>
+							</div>
+							<div class="artist">
+								<p>{{this.artistName}}</p>
+							</div>
+							<div class="delete">
+								<button type="button">
+								<a href="/delete/{{this.artistName}}/{{this.title}}">
+								<img src="resource/trash.png" height="20px" width="20px">
+								</a>
+								</button>			
+							</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+	</div>
+
+	<div class="player">
+		<div id="progess"></div>
+		<div class="playpause">
+			<img src="/resource/playerplay.png" height="20px" width="20px" class="playerplay">
+			<img src="/resource/playerpause.png" height="20px" width="20px" class="playerpause">
+			<img src="/resource/playerforward.png" height="20px" width="20px" class="playerforward">
+		</div>
+		<div class="metadata">
+			<div id="song">
+				 &nbsp- &nbsp
+			</div>
+			<div id="singer">
+				&nbsp&nbsp-&nbsp&nbsp 
+			</div>
+			<div id="currentTime">
+				0:00/
+			</div>
+
+			<div id="duration">
+				0:00
+			</div>
+		</div>
+	</div>
+	<audio style="display:hidden" id="audiohold"></audio>
 </body>
 </html>

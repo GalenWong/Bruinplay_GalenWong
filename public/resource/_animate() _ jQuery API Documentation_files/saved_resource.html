@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://api.jquery.com/animate/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>animate demo</title>
+  <style>
+  div {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+  }
+  </style>
+  <script src="./jquery-1.10.2.js"></script>
+<style>html, body { border:0; margin:0; padding:0; }body { font-family: 'Helvetica', 'Arial',  'Verdana', 'sans-serif'; }</style></head>
+<body style="">
+ 
+<button id="go">» Run</button>
+<div id="block" style="width: 70%; font-size: 3em; opacity: 0.4; margin-left: 0.6in; border-width: 10px;">Hello!</div>
+ 
+<script>window.onload = function() {
+// Using multiple unit types within one animation.
+ 
+$( "#go" ).click(function() {
+  $( "#block" ).animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500 );
+});
+};</script>
+ 
+
+</body></html>

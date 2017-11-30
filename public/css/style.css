@@ -1,0 +1,386 @@
+body{
+	display: inline;
+	width: 100vw;
+	font: "Arial";
+	background-color: #222222;
+	margin: 0px;
+}
+
+
+
+
+.uploadpage{
+	width:100vw;
+	height: 100vw;
+	position: fixed;
+	background-color:#CCCCCC;
+	opacity: 0.9;
+	z-index: 100;
+}
+
+.uploadbox{
+	height: 660px;
+	width: 700px;
+	background-color: #222225;
+	opacity: 1;
+	margin:20px auto;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.uploadbox p{
+	color:#dddddd;
+	font-family: 'Libre Barcode 39 Text', cursive;
+	font-size: 50px;
+	margin:0 0 ;
+}
+
+#fline {
+	padding-top: 30px;
+}
+
+.uploadbox form{
+	padding: 40px 40px;
+}
+
+.uploadbox input{
+	color:#eeeeee;
+}
+
+.sourceinput, .coverinput{
+	float:left;
+}
+
+.sourceinput input, .coverinput input{
+	display: inline-block;
+}
+
+.sourceinput input{
+	padding-left: 63px;
+}
+
+.sourceinput h4, .coverinput h4{
+	font-size: 18px;
+	color: #eeeeee;
+	display: inline-block;
+}
+
+.submit{
+	padding-top: 120px;
+	float:right;
+	display: block;
+	position: absolute;
+}
+
+#submitbutton{
+	color:#111111;
+}
+
+
+.headerdiv{
+	display: inline;
+	float:left;
+	background-color: #222222;
+	height: 72px;
+	width:100vw;
+	padding: 4px 16px;
+	position: fixed;
+	margin-bottom: 100px;
+	z-index: 99;
+	overflow: hidden;
+	min-width:1264px;
+}
+
+.list{
+	display: inline-block;
+    padding-left: 24px;
+    width: 100vw;
+}
+
+.list a, .list h2 {
+	color: #EEEEEE;
+}
+
+.BP{
+	font-size: 40px;
+	padding-right: 24px;
+	margin:auto;
+	text-decoration: none;
+	font-family: "Iceland";
+}
+
+.list input[type=text]{
+    width: 100px;
+    height: 35px;
+    -webkit-transition: width 0.25s ease-in-out;
+    transition: width 0.25s ease-in-out;
+    margin-left: 24px;
+    color: #EEEEEE;
+}
+
+.list input:focus {
+    width: 200px;
+}
+
+#history{
+	float:right; 
+	margin-top: 15px;
+	background-color: transparent;
+	border:1px solid #EEEEEE;
+	margin-right: 8px;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    float: right;
+    text-overflow:ellipsis;
+}
+
+.sidenav li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+   	cursor:pointer;
+}
+
+.sidenav h2{
+	padding-left: 16px;
+    color: #EEEEEE;
+    margin-bottom: 0;
+}
+
+#dropdown1{
+	width:300px;
+}
+
+#home{
+	text-decoration: none;
+	margin: auto;
+	font-size: 16px;
+}
+#byalbum, #byartist{
+	padding-left: 15px;
+}
+
+
+.Add{
+	font-size: 30px;
+	display: inline;
+	padding-left: 16px;
+	padding-right: 70px;
+	font-family: 'Libre Barcode 39 Text', cursive;
+	float: right;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.content{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+	margin:0 auto;
+	width: 100vw;
+}
+
+
+.boxes{
+	margin:100px 0;
+	min-width:980px;
+}
+
+.boxes:focus{
+	outline-width:0px ;
+}
+
+@media screen and (max-width: 980px) and (min-width: 800px) {
+    .center {
+        width:840px;
+    }
+}
+@media screen and (max-width: 1260px) and (min-width: 980px) {
+    .center {
+        width:840px;
+    }
+}
+
+@media screen and (max-width: 1540px) and (min-width: 1260px) {
+    .center {
+        width:1120px;
+    }
+}
+@media screen and (max-width: 1820px) and (min-width: 1540px) {
+    .center {
+        width:1400px;
+    }
+}
+@media screen and (min-width: 1820px) {
+    .center {
+        width:1680px;
+    }
+}
+.center{
+	min-width: 840px;
+	text-align: left;
+	margin: 0 auto;
+}
+
+.box{
+	width: 280px;
+	float: left;
+	padding:30px 40px;
+	display: inline-block;
+	box-sizing: border-box;
+
+}
+
+.border{
+	border:1px solid #eeeeee;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #2D3033;
+	box-shadow: 0px 0px 50px #DDDDDD;
+	width:200px;
+	transition: box-shadow .3s;
+}
+
+.border:hover {
+	box-shadow: 0px 0px 100px #19a0ff;
+	border-color:#54b8ff;
+}
+
+.albumcover{
+	width:200px;
+	height: 200px;
+	padding:auto;
+	position: relative;
+	cursor: pointer;
+}
+
+.albumcover:hover .play{
+	opacity:0.8;
+}
+
+
+
+.image{
+	width:200px;
+	height: 200px;
+}
+
+.play{
+	width:200px;
+	height: 200px;
+	transform: translate(0px, -200px);
+	opacity: 0;
+}
+
+
+
+.play img{
+	position: absolute;
+	top: 0; bottom:0; left: 0; right:0;
+	margin: auto;
+	
+}
+.info{
+	height: 120px;
+}
+
+.info p{
+	padding-left: 10px;
+	color:#ddddde;
+	font-size: 15px;
+	width:180px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.infoContent{
+	padding-left: 8px;
+}
+
+.songName{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+.delete{
+	padding-left: 7px;
+}
+
+.delete button{
+	height: 20px;
+	width: 20px;
+	padding:0 0 0 0;
+	border-color: transparent;
+	background-color: transparent;
+} 
+
+.delete button:hover{
+	background-color: #444444;
+}
+
+.delete button:active{
+}
+
+.player{
+	position: fixed;
+	bottom:0;
+	background-color:#CCCCCC;
+	opacity: 0.9;
+	width:100vw;
+	height: 50px;
+	z-index: 2;
+}
+
+.player div{
+	display: block;
+	float:left;
+	text-align: center;
+}
+
+#progess{
+	height:50px;
+	background-color: #999999;
+	width:0;
+	position: fixed;
+	z-index:-1;
+}
+
+
+.playpause{
+	padding-left: 2.5vw;
+	padding-top:15px;
+	z-index: 2;
+}
+
+.playpause img{
+	cursor: pointer;
+}
+
+
+.metadata{
+	padding-left:2vw;
+	line-height: 50px;
+	z-index: 2;
+	cursor: default;
+}
+
+.playerforward{
+	margin-left: 20px;
+}
